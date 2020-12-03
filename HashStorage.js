@@ -9,7 +9,7 @@ class HashStorage {
   
     getValue(key) {
       if(!(key in this.store_)) {
-        return ('Такого напитка нет в списке!')
+        return false
       }
 
       return this.store_[key]; 
@@ -53,11 +53,11 @@ class HashStorage {
 const checkButton = document.getElementById('get-coctail');
 checkButton.onclick = function () {
   
-  const name = window.prompt('Введите название коктеля');
+  const input = window.prompt('Введите название коктеля');
   
   const display = document.querySelector('h1')
 
-  display.textContent = coctailsStorage.getValue(name)
+  display.textContent = coctailsStorage.getValue(input)
 
 
   
